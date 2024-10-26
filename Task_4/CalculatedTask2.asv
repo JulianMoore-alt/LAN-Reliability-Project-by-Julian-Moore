@@ -1,0 +1,22 @@
+function result = CalculatedTask2(K)
+    probability = 0.01
+    chanceOfFailure = []
+    packets = []
+    for i= 1:98
+        packets(end + 1) = K/((1-probability)^2);
+        chanceOfFailure(end + 1) = probability;
+        probability = probability + 0.01;
+        
+    end 
+    tab1 = table(chanceOfFailure, packets);
+    plot(tab1, "chanceOfFailure", "packets");
+    xlim([0.1, 1])
+    ylim([0.1, 10000])
+ 
+    
+
+
+
+
+
+

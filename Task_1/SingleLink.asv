@@ -1,0 +1,16 @@
+function point = SingleLink(K)
+    probability = 0.01;
+    Kpackets = []
+    chanceOfFailure = []
+    for i = 1:99
+        Kpackets(end + 1) = runSingleLinkSim(K, probability, 1000)
+        chanceOfFailure(end +1) = probability
+        probability = probability + 0.01
+        
+       
+    end
+    tbl1 = table(Kpackets, chanceOfFailure)
+    plot(tbl1, "chanceOfFailure", "Kpackets","Marker","o", "Visible", "off")
+    xlim([0.0 1.0])
+    ylim([1 100])
+    

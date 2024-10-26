@@ -1,0 +1,17 @@
+function result = CalculatedTask1(K)
+    probability = 0.1
+    chanceOfFailure = []
+    transmittedPackets = []
+    for i= 1:99
+        packets(end + 1) = K/(1-probability)
+        chanceOfFailure(end + 1) = probability
+        probability = probability + 0.1;
+    end 
+    tab1 = table(packets, chanceOfFailure);
+    plot(tab1, "")
+
+
+
+
+
+

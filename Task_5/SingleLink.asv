@@ -1,0 +1,17 @@
+function point = SingleLink(K)
+    p1 = 0.01;
+  
+    Kpackets = []
+    chanceOfFailure = [];
+    for i = 1:99
+        Kpackets(end + 1) = runSingleLinkSim(K, p1, 1000);
+        chanceOfFailure(end +1) = p1;
+      
+        p1 = p1 + 0.01;
+        
+       
+    end
+    tbl1 = table(Kpackets, chanceOfFailure);
+    plot(tbl1, "chanceOfFailure", "Kpackets","Marker","o", "LineStyle", "none");
+    xlim([0.1, 1]);
+    set(gca, 'YScale', 'log');

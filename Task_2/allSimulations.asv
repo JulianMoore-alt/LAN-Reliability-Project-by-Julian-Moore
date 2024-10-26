@@ -1,0 +1,9 @@
+One()
+Five()
+Fifteen
+fifty()
+hundred()
+xlabel("chance of failure")
+ylabel("Transmitted Pa")
+xlim([0 1])
+ylim([0, 100])
